@@ -1,0 +1,373 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12425,        365]
+NotebookOptionsPosition[     10534,        318]
+NotebookOutlinePosition[     10947,        336]
+CellTagsIndexPosition[     10904,        333]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Question 5:", "Title",
+ CellChangeTimes->{{3.7196002794254103`*^9, 
+  3.7196002843948317`*^9}},ExpressionUUID->"9d979040-7f73-4b20-8915-\
+46cc457a7ba4"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Wave", " ", "function", " ", "templates"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Psi]", "[", 
+    RowBox[{
+    "n_", ",", "l_", ",", "m_", ",", "Z_", ",", "r_", ",", "\[Theta]_", ",", 
+     "\[CurlyPhi]_"}], "]"}], ":=", 
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      FractionBox[
+       RowBox[{"2", " ", "Z"}], 
+       RowBox[{"n", " ", 
+        SubscriptBox["a", "0"]}]], ")"}], 
+     FractionBox["3", "2"]], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"n", "-", "l", "-", "1"}], ")"}], "!"}], 
+       RowBox[{"2", "n", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"n", "+", "l"}], ")"}], "!"}]}]], ")"}], 
+     FractionBox["1", "2"]], 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"Z", " ", "r"}], 
+       RowBox[{"n", " ", 
+        SubscriptBox["a", "0"]}]]}]], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      FractionBox[
+       RowBox[{"2", " ", "Z", " ", "r"}], 
+       RowBox[{"n", " ", 
+        SubscriptBox["a", "0"]}]], ")"}], "l"], 
+    RowBox[{"LaguerreL", "[", 
+     RowBox[{
+      RowBox[{"n", "-", "l", "-", "1"}], ",", 
+      RowBox[{
+       RowBox[{"2", "l"}], "+", "1"}], ",", 
+      FractionBox[
+       RowBox[{"2", " ", "Z", " ", "r"}], 
+       RowBox[{"n", " ", 
+        SubscriptBox["a", "0"]}]]}], "]"}], 
+    RowBox[{"SphericalHarmonicY", "[", 
+     RowBox[{"l", ",", "m", ",", "\[Theta]", ",", "\[CurlyPhi]"}], "]"}]}]}], 
+  " ", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Velocity", " ", "function", " ", "definition"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Velo", "[", 
+   RowBox[{"n_", ",", " ", "m_", ",", " ", "l_"}], "]"}], ":=", 
+  RowBox[{"Integrate", "[", "\[IndentingNewLine]", "           ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"r", "^", "2"}], ")"}], 
+     RowBox[{"Sin", "[", "\[Theta]", "]"}], "\[Times]", "\[IndentingNewLine]",
+      "        ", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Here", " ", "only", " ", "H", " ", "atom", " ", "is", " ", 
+       "concerned"}], " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"Conjugate", "[", 
+      RowBox[{"\[Psi]", "[", 
+       RowBox[{
+       "n", ",", "m", ",", "l", ",", "1", ",", "r", ",", "\[Theta]", ",", 
+        "\[CurlyPhi]"}], "]"}], "]"}], "\[Times]", 
+     RowBox[{"(", "   ", "\[IndentingNewLine]", "       ", 
+      RowBox[{
+       RowBox[{"Grad", "[", 
+        RowBox[{
+         RowBox[{"\[Psi]", "[", 
+          RowBox[{
+          "n", ",", "m", ",", "l", ",", "1", ",", "r", ",", "\[Theta]", ",", 
+           "\[CurlyPhi]"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"r", ",", "\[Theta]", ",", "\[CurlyPhi]"}], "}"}], ",", 
+         "\"\<Spherical\>\""}], "]"}], "+", "\[IndentingNewLine]", "     ", 
+       RowBox[{
+        FractionBox["1", "r"], " ", 
+        RowBox[{"\[Psi]", "[", 
+         RowBox[{
+         "n", ",", "m", ",", "l", ",", "1", ",", "r", ",", "\[Theta]", ",", 
+          "\[CurlyPhi]"}], "]"}]}]}], ")"}]}], ",", "\[IndentingNewLine]", 
+    "\t  ", 
+    RowBox[{"{", 
+     RowBox[{"r", ",", "0", ",", "\[Infinity]"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"\[Theta]", ",", "0", ",", "\[Pi]"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"\[CurlyPhi]", ",", "0", ",", 
+      RowBox[{"2", "\[Pi]"}]}], "}"}], ",", "\[IndentingNewLine]", "\t  ", 
+    RowBox[{"Assumptions", "\[Rule]", 
+     RowBox[{
+      SubscriptBox["a", "0"], ">", "0"}]}], ",", " ", "\[IndentingNewLine]", 
+    "\t  ", 
+    RowBox[{"Assumptions", "\[Rule]", 
+     RowBox[{"n", "\[Element]", "Integers"}]}], ",", "\[IndentingNewLine]", 
+    "\t  ", 
+    RowBox[{"Assumptions", "\[Rule]", 
+     RowBox[{"Z", "\[Element]", "Integers"}]}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.7196005904389553`*^9, 3.719600823928998*^9}, {
+  3.719600854876608*^9, 3.7196008587358007`*^9}, {3.7196010052963*^9, 
+  3.719601280006857*^9}, {3.7196013256375923`*^9, 
+  3.7196013394250298`*^9}},ExpressionUUID->"12196dd5-ab37-44ba-a2a4-\
+4eb42c14a693"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "A. Average Velocity for hydrogen atom ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[CapitalPsi]", 
+    RowBox[{"1", ",", " ", "0", ",", " ", "0"}]], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b81f47d0-e69b-442a-9c92-30f10244c9a5"]
+}], "Section",
+ CellChangeTimes->{{3.7196009273501377`*^9, 
+  3.7196009759182577`*^9}},ExpressionUUID->"251d802a-2062-47d2-b307-\
+2aeb229ca2c0"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Velo", "[", 
+  RowBox[{"1", ",", "0", ",", "0"}], "]"}]], "Input",
+ CellChangeTimes->{{3.719600979601637*^9, 3.719601003730138*^9}, {
+  3.7196012842074213`*^9, 3.719601297193037*^9}, {3.719601359627878*^9, 
+  3.719601361649459*^9}},ExpressionUUID->"1fc12aeb-22a7-4dd2-914c-\
+3126165a5942"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0", ",", 
+   FractionBox["1", 
+    SubscriptBox["a", "0"]], ",", 
+   FractionBox["1", 
+    SubscriptBox["a", "0"]]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.7196012979130487`*^9, {3.719601342396965*^9, 3.719601362799478*^9}, {
+   3.7196691445457993`*^9, 3.719669154278709*^9}, 
+   3.719669206145329*^9},ExpressionUUID->"8ff52d84-8115-4d1e-a72a-\
+c363d1472c95"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "B. Average Velocity for hydrogen atom ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[CapitalPsi]", 
+    RowBox[{"7", ",", " ", "0", ",", " ", "0"}]], TraditionalForm]],
+  ExpressionUUID->"a5ab16e2-50f0-4123-8f19-a4b091ae35ec"]
+}], "Section",
+ CellChangeTimes->{{3.7196009273501377`*^9, 3.7196009759182577`*^9}, {
+   3.719601430100945*^9, 3.719601430101061*^9}, 
+   3.719668924040309*^9},ExpressionUUID->"ade87285-f4db-49c9-96c2-\
+7b0a6368bbe3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Velo", "[", 
+  RowBox[{"7", ",", "0", ",", "0"}], "]"}]], "Input",
+ CellChangeTimes->{{3.719600979601637*^9, 3.719601003730138*^9}, {
+   3.7196012842074213`*^9, 3.719601297193037*^9}, {3.719601359627878*^9, 
+   3.719601361649459*^9}, 
+   3.719601432535861*^9},ExpressionUUID->"2b651535-58bb-4f41-822a-\
+86c416dcf0b9"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0", ",", 
+   FractionBox["1", 
+    RowBox[{"49", " ", 
+     SubscriptBox["a", "0"]}]], ",", 
+   FractionBox["1", 
+    RowBox[{"49", " ", 
+     SubscriptBox["a", "0"]}]]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.7196012979130487`*^9, {3.719601342396965*^9, 3.719601362799478*^9}, 
+   3.719601437075664*^9, {3.719669146578108*^9, 3.719669155944895*^9}, 
+   3.719669211655939*^9},ExpressionUUID->"db76e01b-5cb4-433a-8b95-\
+b9d7fc14474d"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "C. Average Velocity for hydrogen atom ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[CapitalPsi]", 
+    RowBox[{"5", ",", " ", "0", ",", " ", "0"}]], TraditionalForm]],
+  ExpressionUUID->"b0d8aee4-f247-42d8-9068-4491f0901e92"]
+}], "Section",
+ CellChangeTimes->{{3.7196009273501377`*^9, 3.7196009759182577`*^9}, {
+  3.719601440274169*^9, 3.7196014420249853`*^9}, {3.71966891803506*^9, 
+  3.719668920021248*^9}},ExpressionUUID->"4a924b2e-6d3a-4eb8-8bf6-\
+d3e71ef2b4d4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Velo", "[", 
+  RowBox[{"5", ",", "0", ",", "0"}], "]"}]], "Input",
+ CellChangeTimes->{{3.719600979601637*^9, 3.719601003730138*^9}, {
+   3.7196012842074213`*^9, 3.719601297193037*^9}, {3.719601359627878*^9, 
+   3.719601361649459*^9}, 
+   3.7196014507849283`*^9},ExpressionUUID->"f226f780-b677-4722-a5af-\
+30be1bb46a67"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0", ",", 
+   FractionBox["1", 
+    RowBox[{"25", " ", 
+     SubscriptBox["a", "0"]}]], ",", 
+   FractionBox["1", 
+    RowBox[{"25", " ", 
+     SubscriptBox["a", "0"]}]]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.7196012979130487`*^9, {3.719601342396965*^9, 3.719601362799478*^9}, {
+   3.719601448060728*^9, 3.7196014551591797`*^9}, {3.719669148089826*^9, 
+   3.719669157230259*^9}, 
+   3.719669214740161*^9},ExpressionUUID->"357448c3-52f0-4880-ace9-\
+bc109f90fa88"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "D. Average Velocity for hydrogen atom ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[CapitalPsi]", 
+    RowBox[{"5", ",", " ", "4", ",", " ", "3"}]], TraditionalForm]],
+  ExpressionUUID->"ddbe880b-f4e9-48c9-bad7-f8a8d7ef3ac7"]
+}], "Section",
+ CellChangeTimes->{{3.7196009273501377`*^9, 3.7196009759182577`*^9}, {
+  3.719601440274169*^9, 3.7196014730851593`*^9}, {3.719668914003574*^9, 
+  3.719668915335895*^9}},ExpressionUUID->"5cb6ed23-0a75-4785-b8af-\
+c0eecd9f54a7"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Velo", "[", 
+  RowBox[{"5", ",", "4", ",", "3"}], "]"}]], "Input",
+ CellChangeTimes->{{3.719600979601637*^9, 3.719601003730138*^9}, {
+  3.7196012842074213`*^9, 3.719601297193037*^9}, {3.719601359627878*^9, 
+  3.719601361649459*^9}, {3.7196014507849283`*^9, 
+  3.7196014794244547`*^9}},ExpressionUUID->"45046f47-1f69-45ab-8351-\
+b5355ea72794"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0", ",", 
+   FractionBox["1", 
+    RowBox[{"25", " ", 
+     SubscriptBox["a", "0"]}]], ",", 
+   FractionBox[
+    RowBox[{"4096", "+", 
+     RowBox[{"4725", " ", "\[ImaginaryI]", " ", "\[Pi]"}]}], 
+    RowBox[{"102400", " ", 
+     SubscriptBox["a", "0"]}]]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.7196012979130487`*^9, {3.719601342396965*^9, 3.719601362799478*^9}, {
+   3.719601448060728*^9, 3.719601482996587*^9}, {3.719669150170164*^9, 
+   3.7196691590345163`*^9}, 
+   3.719669216950384*^9},ExpressionUUID->"7f2b1b88-9dce-46f3-9149-\
+6dd3cf0f0a66"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 675},
+WindowMargins->{{Automatic, 259}, {Automatic, 9}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+FrontEndVersion->"11.2 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+10, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 158, 3, 98, "Title",ExpressionUUID->"9d979040-7f73-4b20-8915-46cc457a7ba4"],
+Cell[741, 27, 4266, 115, 441, "Input",ExpressionUUID->"12196dd5-ab37-44ba-a2a4-4eb42c14a693"],
+Cell[CellGroupData[{
+Cell[5032, 146, 423, 11, 70, "Section",ExpressionUUID->"251d802a-2062-47d2-b307-2aeb229ca2c0"],
+Cell[CellGroupData[{
+Cell[5480, 161, 313, 6, 30, "Input",ExpressionUUID->"1fc12aeb-22a7-4dd2-914c-3126165a5942"],
+Cell[5796, 169, 403, 11, 53, "Output",ExpressionUUID->"8ff52d84-8115-4d1e-a72a-c363d1472c95"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6248, 186, 463, 11, 70, "Section",ExpressionUUID->"ade87285-f4db-49c9-96c2-7b0a6368bbe3"],
+Cell[CellGroupData[{
+Cell[6736, 201, 341, 7, 30, "Input",ExpressionUUID->"2b651535-58bb-4f41-822a-86c416dcf0b9"],
+Cell[7080, 210, 477, 13, 53, "Output",ExpressionUUID->"db76e01b-5cb4-433a-8b95-b9d7fc14474d"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7606, 229, 486, 11, 70, "Section",ExpressionUUID->"4a924b2e-6d3a-4eb8-8bf6-d3e71ef2b4d4"],
+Cell[CellGroupData[{
+Cell[8117, 244, 343, 7, 30, "Input",ExpressionUUID->"f226f780-b677-4722-a5af-30be1bb46a67"],
+Cell[8463, 253, 507, 14, 53, "Output",ExpressionUUID->"357448c3-52f0-4880-ace9-bc109f90fa88"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9019, 273, 487, 11, 70, "Section",ExpressionUUID->"5cb6ed23-0a75-4785-b8af-c0eecd9f54a7"],
+Cell[CellGroupData[{
+Cell[9531, 288, 366, 7, 30, "Input",ExpressionUUID->"45046f47-1f69-45ab-8351-b5355ea72794"],
+Cell[9900, 297, 594, 16, 53, "Output",ExpressionUUID->"7f2b1b88-9dce-46f3-9149-6dd3cf0f0a66"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

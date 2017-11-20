@@ -1,0 +1,419 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15308,        411]
+NotebookOptionsPosition[     13575,        369]
+NotebookOutlinePosition[     13987,        387]
+CellTagsIndexPosition[     13944,        384]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Question 1", "Title",
+ CellChangeTimes->{{3.719582601571034*^9, 
+  3.719582606858881*^9}},ExpressionUUID->"b41df12f-dfbb-4921-8eaf-\
+be5f6aede67b"],
+
+Cell["Superposition wavefunction plotting", "Text",
+ CellChangeTimes->{{3.71958456208883*^9, 
+  3.719584574524068*^9}},ExpressionUUID->"db1e902a-a6a1-4566-81cc-\
+e97b590ab1c4"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Defining", " ", "wave", " ", "functions"}], " ", "*)"}], " ", 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Omega]", 
+     RowBox[{"n_", " "}]], ":=", " ", 
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["n", "2"], 
+      SuperscriptBox["\[Pi]", "2"], " ", "\[HBar]"}], 
+     RowBox[{"2", "m", " ", 
+      SuperscriptBox["L", "2"]}]]}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[CapitalPsi]", "n_"], "[", 
+     RowBox[{"x_", ",", " ", "t_"}], "]"}], " ", ":=", " ", 
+    RowBox[{
+     SqrtBox[
+      FractionBox["2", "L"]], 
+     RowBox[{"Sin", "[", 
+      FractionBox[
+       RowBox[{"n", " ", "2", "\[Pi]", " ", "x"}], "L"], "]"}], 
+     RowBox[{"Cos", "[", 
+      RowBox[{
+       SubscriptBox["\[Omega]", "n"], "t"}], "]"}]}]}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Temporary", " ", "assign", " ", "parameters", " ", "for", " ", 
+     "plotting"}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"t", ":=", "0"}], ";", " ", 
+     RowBox[{"m", ":=", "1"}], ";", " ", 
+     RowBox[{"L", ":=", "1"}], ";", " ", 
+     RowBox[{"\[HBar]", ":=", "1"}], ";"}], ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.719584797123125*^9, 3.719584813014447*^9}, 
+   3.7195850303098288`*^9, {3.7196667839331417`*^9, 
+   3.71966689030147*^9}},ExpressionUUID->"8a7f88b5-1e4c-472b-b87c-\
+e4fe14914fea"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "a.  \[CapitalPsi](x, t) = ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[CapitalPsi]", "1"], TraditionalForm]],
+  InitializationCell->True,
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "6bea92a8-91db-4157-9065-ec6e7cbdddcf"],
+ "(x, t) + ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[CapitalPsi]", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "42612cea-f87d-4765-a665-56f2271f790f"],
+ "(x, t) "
+}], "Section",
+ CellChangeTimes->{{3.719584599583308*^9, 
+  3.7195847154971*^9}},ExpressionUUID->"4d896f38-3018-4e4e-b6fe-af61007bf2d5"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       SubscriptBox["\[CapitalPsi]", "1"], "[", 
+       RowBox[{
+        RowBox[{"x", " ", "m", " ", "L"}], ",", " ", "t"}], "]"}], " ", "+", 
+      " ", 
+      RowBox[{
+       SubscriptBox["\[CapitalPsi]", "2"], "[", 
+       RowBox[{
+        RowBox[{"x", " ", "m", " ", "L"}], ",", " ", "t"}], "]"}]}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", " ", "5"}], "}"}]}], "]"}], "  ", ",", " ", 
+   
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7195848386745777`*^9, 3.719584853046481*^9}, {
+  3.719584896131907*^9, 3.7195848974286737`*^9}, {3.719584985741413*^9, 
+  3.719585038426931*^9}},ExpressionUUID->"20c3e129-5fe9-4dc3-a082-\
+d7bc1691f2f4"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`t$$ = 0, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`t$$], 0, 1}}, Typeset`size$$ = {360., {107., 112.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`t$244720$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`t$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$244720$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Plot[Subscript[$CellContext`\[CapitalPsi], 
+          1][$CellContext`x $CellContext`m $CellContext`L, $CellContext`t$$] + 
+        Subscript[$CellContext`\[CapitalPsi], 
+          2][$CellContext`x $CellContext`m $CellContext`L, $CellContext`t$$], \
+{$CellContext`x, 0, 5}], "Specifications" :> {{$CellContext`t$$, 0, 1}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {152., 158.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.71958484109013*^9, 3.719584853757771*^9}, 
+   3.719584917180818*^9, {3.719584992043891*^9, 3.719585044504694*^9}, 
+   3.7195852057443237`*^9, 3.719588518378924*^9, 3.719666767778542*^9, 
+   3.7196689402468348`*^9},ExpressionUUID->"0d3f59f7-4ad2-453e-b05b-\
+c09aa0d6900b"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "b.  \[CapitalPsi](x, t) = ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[CapitalPsi]", "2"], TraditionalForm]],
+  InitializationCell->True,
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "944ca791-c6f1-4516-9b71-59166c1e8aeb"],
+ "(x, t) + ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[CapitalPsi]", "3"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "cc3085c6-dc02-489e-ac33-1e2734a56336"],
+ "(x, t) "
+}], "Section",
+ CellChangeTimes->{{3.719584933778071*^9, 
+  3.719584955441353*^9}},ExpressionUUID->"3e5cad0f-a85e-478d-be0f-\
+6de65778065f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       SubscriptBox["\[CapitalPsi]", "1"], "[", 
+       RowBox[{
+        RowBox[{"x", " ", "m", " ", "L"}], ",", " ", "t"}], "]"}], "+", 
+      RowBox[{
+       SubscriptBox["\[CapitalPsi]", "2"], "[", 
+       RowBox[{
+        RowBox[{"x", " ", "m", " ", "L"}], ",", " ", "t"}], "]"}], "+", 
+      RowBox[{
+       SubscriptBox["\[CapitalPsi]", "3"], "[", 
+       RowBox[{
+        RowBox[{"x", " ", "m", " ", "L"}], ",", " ", "t"}], "]"}]}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", " ", "5"}], "}"}]}], "]"}], "  ", ",", " ", 
+   
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.719584967425241*^9, 3.7195849835029383`*^9}, {
+  3.7195850548777723`*^9, 3.719585071559807*^9}, {3.719585153607794*^9, 
+  3.719585178856257*^9}},ExpressionUUID->"e9277339-1138-4ade-abc7-\
+330b585ad6e3"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`t$$ = 0, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`t$$], 0, 1}}, Typeset`size$$ = {
+    259.2, {77., 80.68869595990552}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`t$244784$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`t$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$244784$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Plot[Subscript[$CellContext`\[CapitalPsi], 
+          1][$CellContext`x $CellContext`m $CellContext`L, $CellContext`t$$] + 
+        Subscript[$CellContext`\[CapitalPsi], 
+          2][$CellContext`x $CellContext`m $CellContext`L, $CellContext`t$$] + 
+        Subscript[$CellContext`\[CapitalPsi], 
+          3][$CellContext`x $CellContext`m $CellContext`L, $CellContext`t$$], \
+{$CellContext`x, 0, 5}], "Specifications" :> {{$CellContext`t$$, 0, 1}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{296., {111.93650388717651`, 116.06349611282349`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.7195850609678173`*^9, 3.719585072099011*^9}, {
+   3.719585180057276*^9, 3.7195852029700127`*^9}, 3.719588518535824*^9, 
+   3.719666767945464*^9, 
+   3.719668940403215*^9},ExpressionUUID->"162779a2-9f51-4071-9f9b-\
+ba9697ad6ed8"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "c.  \[CapitalPsi](x, t) = ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[CapitalPsi]", "2"], TraditionalForm]],
+  InitializationCell->True,
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c087d55d-b970-400c-853d-306ea747c7bb"],
+ "(x, t) + ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[CapitalPsi]", "3"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "a8330306-d1b3-4b54-bcdb-185e508aef74"],
+ "(x, t) "
+}], "Section",
+ CellChangeTimes->{{3.7195851166758547`*^9, 
+  3.719585131692463*^9}},ExpressionUUID->"02374baf-4d3a-40fe-9419-\
+8547975f607b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       SubscriptBox["\[CapitalPsi]", "2"], "[", 
+       RowBox[{
+        RowBox[{"x", " ", "m", " ", "L"}], ",", " ", "t"}], "]"}], "+", 
+      RowBox[{
+       SubscriptBox["\[CapitalPsi]", "3"], "[", 
+       RowBox[{
+        RowBox[{"x", " ", "m", " ", "L"}], ",", " ", "t"}], "]"}]}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", " ", "5"}], "}"}]}], "]"}], "  ", ",", " ", 
+   
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.719585147144928*^9},ExpressionUUID->"1a99faf8-8969-40cf-8aa6-\
+b3ef74a4dd11"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`t$$ = 0, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`t$$], 0, 1}}, Typeset`size$$ = {
+    259.2, {79., 82.2623776271054}}, Typeset`update$$ = 0, Typeset`initDone$$,
+     Typeset`skipInitDone$$ = True, $CellContext`t$244848$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`t$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$244848$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Plot[Subscript[$CellContext`\[CapitalPsi], 
+          2][$CellContext`x $CellContext`m $CellContext`L, $CellContext`t$$] + 
+        Subscript[$CellContext`\[CapitalPsi], 
+          3][$CellContext`x $CellContext`m $CellContext`L, $CellContext`t$$], \
+{$CellContext`x, 0, 5}], "Specifications" :> {{$CellContext`t$$, 0, 1}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{296., {113.93650388717651`, 118.06349611282349`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.719585148071175*^9, 3.719585200246722*^9, 
+  3.719588518695071*^9, 3.719666768080422*^9, 
+  3.719668940561211*^9},ExpressionUUID->"6bfce1f7-2d52-4fa9-b22f-\
+b07c1d2886f8"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Remove", " ", "temporary", " ", "assigned", " ", "parameters"}], 
+   " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"Clear", "[", 
+   RowBox[{"t", ",", " ", "m", ",", " ", "L", ",", " ", "\[HBar]"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.719666913192232*^9, 
+  3.719666943177099*^9}},ExpressionUUID->"bf8b7155-f76c-4558-bbf9-\
+f1b482bb2fe9"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 675},
+WindowMargins->{{Automatic, 28}, {1, Automatic}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+FrontEndVersion->"11.2 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+10, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 153, 3, 98, "Title",ExpressionUUID->"b41df12f-dfbb-4921-8eaf-be5f6aede67b"],
+Cell[736, 27, 176, 3, 35, "Text",ExpressionUUID->"db1e902a-a6a1-4566-81cc-e97b590ab1c4"],
+Cell[915, 32, 1454, 41, 167, "Input",ExpressionUUID->"8a7f88b5-1e4c-472b-b87c-e4fe14914fea"],
+Cell[CellGroupData[{
+Cell[2394, 77, 588, 17, 68, "Section",ExpressionUUID->"4d896f38-3018-4e4e-b6fe-af61007bf2d5"],
+Cell[CellGroupData[{
+Cell[3007, 98, 844, 23, 30, "Input",ExpressionUUID->"20c3e129-5fe9-4dc3-a082-d7bc1691f2f4"],
+Cell[3854, 123, 2055, 40, 329, "Output",ExpressionUUID->"0d3f59f7-4ad2-453e-b05b-c09aa0d6900b"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5958, 169, 592, 18, 68, "Section",ExpressionUUID->"3e5cad0f-a85e-478d-be0f-6de65778065f"],
+Cell[CellGroupData[{
+Cell[6575, 191, 985, 26, 30, "Input",ExpressionUUID->"e9277339-1138-4ade-abc7-330b585ad6e3"],
+Cell[7563, 219, 2187, 43, 329, "Output",ExpressionUUID->"162779a2-9f51-4071-9f9b-ba9697ad6ed8"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9799, 268, 594, 18, 68, "Section",ExpressionUUID->"02374baf-4d3a-40fe-9419-8547975f607b"],
+Cell[CellGroupData[{
+Cell[10418, 290, 709, 21, 30, "Input",ExpressionUUID->"1a99faf8-8969-40cf-8aa6-b3ef74a4dd11"],
+Cell[11130, 313, 1996, 39, 329, "Output",ExpressionUUID->"6bfce1f7-2d52-4fa9-b22f-b07c1d2886f8"]
+}, Open  ]],
+Cell[13141, 355, 406, 10, 52, "Input",ExpressionUUID->"bf8b7155-f76c-4558-bbf9-f1b482bb2fe9"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
